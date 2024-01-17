@@ -67,13 +67,14 @@ optimal_value = -objective(optimal_weights)
 print(f"Optimal weights are: {optimal_weights} and the maximum value is: {optimal_value}")
 
 
-######################### Plotting the final results###########################################
+######################### Plotting the final results ###########################################
 
 percentage_difference = np.abs(optimal_value - val_array) / optimal_value * 100
 
+# Importing matplotlib for plotting
 import matplotlib.pyplot as plt
 
-plt.plot(iters, percentage_difference, marker='o')
+plt.plot(iters, percentage_difference, marker='o', color='green')
 plt.xlabel('Number of Iterations')
 plt.ylabel('Absolute Percentage Difference')
 plt.title('Absolute Percentage Difference vs. Number of Iterations')
