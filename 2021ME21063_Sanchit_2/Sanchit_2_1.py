@@ -18,8 +18,8 @@ cost = cost.to_numpy()
 averageTime = np.eye(18) # Identity Matrix
 multiplier = tpm.copy()
 
-# I + P + P^2 + P^3 + ... + P^60
-for _ in range(60):
+# I + P + P^2 + P^3 + ... + P^59
+for _ in range(59):
     averageTime +=  multiplier
     multiplier = multiplier.dot(tpm)
 
