@@ -134,5 +134,13 @@ t_value, p_value = st.ttest_ind(matlab_result, Store_S.flatten(), equal_var=True
 print(f"t_test value: {t_value}, p_test value: {p_value}")
 
 
+# Checking distribution
+alpha = 0.05
+if p_value > alpha:
+    print('Same distribution (fail to reject H0)')
+else:
+    print('Different distribution (reject H0)')
+
+
 # Made by Sanchit ❤️ 
 
