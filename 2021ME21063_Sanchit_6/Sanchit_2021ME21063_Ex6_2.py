@@ -61,9 +61,9 @@ def main():
         accuracy.append(accuracy_data[2])
         
     # Plotting the roc, f1, accuracy 
-    plt.plot(roc)
-    plt.plot(f1)
-    plt.plot(accuracy)
+    plt.plot(roc, marker='s', label="ROC")
+    plt.plot(f1, marker = 'o', label="F1 Score")
+    plt.plot(accuracy, marker = '*', label="Accuracy")
     plt.legend(['ROC', 'F1', 'Accuracy'])
     plt.xticks(np.arange(0,5,1), ones_count)
     plt.xlabel('Number of Ones')
@@ -74,3 +74,5 @@ def main():
 if __name__ == "__main__":
     main()
     
+    
+# The scores ROC, F1, Classification Accuracy decreases as the number of ones increases.
