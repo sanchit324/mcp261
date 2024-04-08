@@ -18,7 +18,6 @@ labels = kmeans.fit_predict(data[['tot_deaths_pm']])
 data['label'] = labels
 data.to_excel("dsml.xlsx", index=False) # Data exported to dsml.xlsx file
 
-
 # Splitting in train and test dataset
 # Dropping columns with non-numerical values and tot_deaths_pm (used for labels)
 data.drop(['continent', 'location', 'tot_deaths_pm'], axis=1, inplace=True)
@@ -51,6 +50,6 @@ for clf in classifiers:
     y_pred = clf.predict(X_test_scaled)
     print(f"\n{clf.__class__.__name__} results:")
     print(classification_report(y_test, y_pred))
-    print(f"AUC score: {roc_auc_score(y_test, y_pred):.2f}")
-    print(f"Balanced accuracy score: {balanced_accuracy_score(y_test, y_pred):.2f}")
+    print(f"AUC score: {roc_auc_score(y_test, y_pred)}")
+    print(f"Balanced accuracy score: {balanced_accuracy_score(y_test, y_pred)}")
     print("-------------------------------------------------------------------")
